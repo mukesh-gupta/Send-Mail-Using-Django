@@ -1,0 +1,64 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Email</title>
+<style>
+
+div.ex1 {
+  width: 80%;
+  margin: auto;
+  border: 1px solid black;
+
+}
+
+
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto;
+  padding: 10px;
+}
+
+.grid-item {
+  border: 5px solid gray;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+   margin:10px 15px;
+}
+</style>
+
+  </head>
+  <body>
+
+  <div class="ex1">
+
+<div class="grid-container">
+    {% for p in info %}
+  <div class="grid-item">
+
+              <h1> {{p.name}}</h1>
+
+
+      <img  src="cid:{{p.image.url}}" alt="not found" width="30%">
+
+
+        <p> {{p.desc}}</p>
+
+
+  </div>
+      {% endfor %}
+
+
+</div>
+
+</div>
+  </body>
+</html>
+
+
+

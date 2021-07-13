@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<nav class="navbar navbar-dark bg-dark" style=height:60px;">
+
+          <a href="{% url 'create' %}" class="btn btn-primary">Create</a>
+
+</nav>
+
+<div class="container" style="margin-top:50px;">
+            {% for p in info %}
+  <div class="row">
+    <div class="col col-md-3">
+      <h5 style="text-align:center">{{p.name}}</h5>
+        <center>
+              <img  src="{{p.image.url}}" alt="not found" width="40%">
+        </center>
+
+    </div>
+    <div class="col col-md-5">
+     {{p.desc}}
+    </div>
+      <div class="col col-md-4">
+       <a href="{% url 'detail' p.id %}" class="btn btn-primary">single email send</a>
+       <a href="{% url 'mail_all' %}" class="btn btn-primary">All email send</a>
+    </div>
+  </div>
+    <hr>
+      {% endfor %}
+</div>
+
+<footer style="height:100px;" class="bg-dark">
+    <center>
+        <h4 style="color:white;padding-top:20px;">Mukesh Gupta</h4>
+    </center>
+</footer>
+
+{% endblock %}
